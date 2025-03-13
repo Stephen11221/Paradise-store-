@@ -69,4 +69,33 @@ function nextSlide() {
  
           // brand  animal
           
-         
+        
+    document.addEventListener("DOMContentLoaded", function () {
+        // Brand Slider (Auto-scroll)
+        new Swiper(".brandSwiper", {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: { delay: 2000, disableOnInteraction: false },
+            breakpoints: {
+                640: { slidesPerView: 3 },
+                768: { slidesPerView: 4 },
+                1024: { slidesPerView: 5 }
+            }
+        });
+
+        // New Arrivals Slider
+        new Swiper(".newArrivalSwiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            },
+            breakpoints: {
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+            }
+        });
+    });
